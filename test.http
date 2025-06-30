@@ -1,6 +1,6 @@
 @servicename = bookshop
 ###
-# @name PIROSSSSLAMPARAS
+# @name PIROSSSSLAMPARASZZZZZZ
 GET http://localhost:4004/odata/v4/catalog/Books
 
 

@@ -1,0 +1,6 @@
+@servicename = bookshop
+###
+# @name QueryBooks
+GET http://localhost:4004/odata/v4/catalog/Books
+
+

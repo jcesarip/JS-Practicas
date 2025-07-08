@@ -1,6 +1,0 @@
-@servicename = bookshop
-###
-# @name PIROSSSSLAMPARASXY
-GET http://localhost:4004/odata/v4/catalog/Books Y TALES PASUCALES
-
-

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Consola JavaScript</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        background-color: #0c323d;
+        color: #809089;
+        font-family: monospace;
+      }
+
+      body {
+        max-width: 700px;
+      }
+
+      p {
+        margin: 0;
+        width: 1%;
+        padding: 0 1%;
+        font-size: 16px;
+        line-height: 1.5;
+        float: left;
+      }
+
+      .input p {
+        margin-right: 1%;
+      }
+
+      .output p {
+        width: 100%;
+      }
+
+      .input input {
+        width: 96%;
+        float: left;
+        border: none;
+        font-size: 16px;
+        line-height: 1.5;
+        font-family: monospace;
+        padding: 0;
+        background: #0c323d;
+        color: #809089;
+      }
+
+      div {
+        clear: both;
+      }
+    </style>
+  </head>
+  <body>
+    <button>Press me</button>
+  </body>
+
+  <script>
+
+    /****Cadenas como objetos
+     * 
+      todo es un objeto en JavaScript
+
+      Tu variable se convierte en una instancia del objeto cadena y, como resultado, tiene una gran cantidad de propiedades y métodos disponibles.
+      Ejemplo 
+       let  string = "Esta es la cadena de texto.."
+    */
+   
+    //***Encontrar la longitud de un cadena
+
+    let longitudTexto = "mozilla";
+    longitudTexto.length;
+
+    //Extrayendo un caracter específico de la cadena
+    longitudTexto[0];
+
+    //Para extraer el último caracter de cualquier cadena
+    longitudTexto[longitudTexto.length -1];
+
+    //Encontrar una subcadena dentro de una cadena y extraerla
+    longitudTexto.indexOf("zilla");
+
+    // slice() para extraerla caracateres especificos. El primer parámetro es la posición del caracter en la que comenzar a extraer, y el segundo parámetro es la posición del caracter posterior al último a ser extraído
+    longitudTexto.slice(0,3);
+
+    //Incluir la posición del caracter desde donde deseas extraer los caracteres restante en la cadena.
+    longitudTexto.slice(2);
+
+
+   //*** Cambiando todo a mayúscula o minúscula
+   // 
+   // Los métodos de cadena toLowerCase() y toUpperCase()
+   // */
+
+    let radData = "Mi NombRe eS mUd";
+    radData.toLocaleLowerCase();
+    radData.toLocaleUpperCase();
+
+
+    //Actualizando partes de una cadena. usando el método replace(). 
+    let cambioTexto = "MeloCaramelo"
+    cambioTexto.replace("Melo", "Nice")
+
+    //en un programa real, debes establecer que el valor de la variable sea el resultado de la operación
+    //c
+    cambioTexto = cambioTexto.replace("Melo", "Nice")
+
+
+    //Realizar pruebas.
+    // https://developer.mozilla.org/es/docs/Learn_web_development/Core/Scripting/Useful_string_methods
+
+     </script>
+</html>

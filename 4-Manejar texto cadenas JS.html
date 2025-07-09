@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Consola JavaScript</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        background-color: #0c323d;
+        color: #809089;
+        font-family: monospace;
+      }
+
+      body {
+        max-width: 700px;
+      }
+
+      p {
+        margin: 0;
+        width: 1%;
+        padding: 0 1%;
+        font-size: 16px;
+        line-height: 1.5;
+        float: left;
+      }
+
+      .input p {
+        margin-right: 1%;
+      }
+
+      .output p {
+        width: 100%;
+      }
+
+      .input input {
+        width: 96%;
+        float: left;
+        border: none;
+        font-size: 16px;
+        line-height: 1.5;
+        font-family: monospace;
+        padding: 0;
+        background: #0c323d;
+        color: #809089;
+      }
+
+      div {
+        clear: both;
+      }
+    </style>
+  </head>
+  <body>
+    <button>Press me</button>
+  </body>
+
+  <script>
+    /*
+     *************Manejar texto — cadenas en JavaScript
+     */
+
+    //Crear Cadena.
+    // Declaramos una variable, iniciandola con el valor de una cadena, y luego retornamos dicho valor.
+
+    var string = "La revolucion de mi pueblo";
+    string;
+
+    /* 
+
+Comillas simples vs. comillas dobles
+
+puedes escoger entre comillas simple y dobles 
+para envolver tus cadenas. Ambas funcionarán correctamente
+
+
+la que utilices dependerá de tus preferencias personales. Sin embargo, deberías de elegir una y mantenerla;
+*/
+
+    var simp = "Comillas simples.";
+    var dobl = "Comillas dobles.";
+    simp;
+    dobl;
+
+    /* Concatenando cadenas 
+
+significa: "unir". Para unir cadenas en JavaScript el símbolo de más (+)
+
+
+
+*/
+    var one = "Hola... ";
+    var two = "Como estas putito... ";
+    var joined = one + two;
+
+    var multiple = one + one + two + one;
+    multiple;
+
+    //Nota: Cuando ingresas una string real en tu código, entre comillas simples o dobles, se llama string literal.
+    var response = one + "Voy Bien..." + two;
+    response;
+
+    /* 
+La concatenación en contexto
+
+Ejemplo 
+
+Aquí estamos usando una función Window.prompt() que le pide al usuario la respuesta a una pregunta, através de un cuadro emergente
+luego, almacenará el dato dentro de una variable este caso llamada name 
+Función Window.alert() mostrar ventana emergente cadena que hemos unido de la concatenación de dos string literales y la variable name 
+*/
+
+ var button = document.querySelector("button")
+
+ button.onclick = function (){
+  var name  = prompt("What is your name ?")
+  alert("Hello" + name +  "nice to see you")
+ }
+
+/* 
+***Números versus cadenas
+agregar (o concatenar) un string y un número?
+
+ */
+var myDate = "19" +  "85";
+typeof myDate;
+
+//Objeto  Number: convertirá cualquier cosa que se le pase en un número
+
+var myTexto = "1234";
+var  myCambio  = Number(myTexto);
+typeof myCambio;
+
+//cada número tiene un método llamado toString() que convertirá el equivalente en una string
+
+let myNumero  = 123
+let   myNumeroaString = myNumero.toString();
+typeof myNumeroaString;
+
+
+//Prueba tus habilidades: Strings
+//Realizar pruebas 
+//https://developer.mozilla.org/es/docs/Learn_web_development/Core/Scripting/Test_your_skills/Strings
+  </script>
+</html>

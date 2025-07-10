@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Consola JavaScript</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        background-color: #0c723d;
+        color: #809089;
+        font-family: monospace;
+      }
+
+      body {
+        max-width: 700px;
+      }
+
+      p {
+        margin: 0;
+        width: 1%;
+        padding: 0 1%;
+        font-size: 16px;
+        line-height: 1.5;
+        float: left;
+      }
+
+      .input p {
+        margin-right: 1%;
+      }
+
+      .output p {
+        width: 100%;
+      }
+
+      .input input {
+        width: 96%;
+        float: left;
+        border: none;
+        font-size: 16px;
+        line-height: 1.5;
+        font-family: monospace;
+        padding: 0;
+        background: #0c323d;
+        color: #809089;
+      }
+
+      div {
+        clear: both;
+      }
+    </style>
+  </head>
+  <body>
+    <button>Press me</button>
+  </body>
+
+  <script>
+    /* ¿Qué es un arreglo?
+      Las matrices se describen como "objetos tipo lista"; básicamente son objetos individuales que contienen múltiples valores almacenados en una lista. 
+       cada elemento del arreglo es una cadena, pero ten en cuenta que puedes almacenar cualquier elemento en un arreglo — cadena, número, objeto, otra variable, 
+       incluso otro arreglo. También puedes mezclar y combinar tipos de elementos 
+    */
+
+    //Creando un arreglo
+    let shopping = ["bread", "milk", "cheese", "humus", "noodles"];
+    shopping;
+
+    let sequence = [1, 1, 2, 3, 5, 8, 9];
+    // Un arreglo dentro de otro arreglo se llama arrelog multidimensional o matriz.
+    let random = ["tree", 795, [0, 1, 2, 3]];
+
+    //Accediendo y modificando elementos del arreglo.
+
+    shopping[0];
+    shopping[0] = "tangas";
+    shopping;
+
+    random[2][3];
+
+    //Encontrar la longitud de un arreglo
+    sequence.length;
+
+    //Esto tiene otros usos, pero se usa más comunmente para indicarle a un ciclo que continúe hasta que haya recorrido todos los elementos del arreglo
+    for (let i = 0; i < sequence.length; i++) {
+      console.log(sequence[i]);
+    }
+
+    /* 
+    Métodos de arreglo útiles. nos permiten dividir cadenas en elementos de arreglo y viceversa, y agregar nuevos elementos en matrices.
+
+ */
+
+    //Conversión entre matrices y cadenas, podemos usar el método split()
+
+    let myData = "Manchester,London,Liverpool,Birmingham,Leeds,Carlisle";
+    let myArray = myData.split(",");
+    myArray;
+
+    let myNewString = myArray.join(",");
+    myNewString;
+
+    //**Otra forma de convertir un arreglo en cadena es usar el método toString(). toString() es posiblemente más simple que join() ya que no toma un parámetro, pero es más limitado. Con join() puedes especificar diferentes separadores
+    let catNames = ["Otto", "Arena", "Oreo", "Cloy"];
+    catNames.toString();
+
+    //Agregar y eliminar elementos del arreglo.
+    let myArrayDelete = [
+      "Manchester",
+      "London",
+      "Liverpool",
+      "Birmingham",                                                                  
+      "Leeds",
+      "Carlisle",
+    ];
+
+    // para añdir o eliminar un elemento al final de un arreglo podemos usar push() y pop() respectivamente.
+    myArrayDelete.push("Bogota");
+    myArrayDelete;
+    myArrayDelete.push("Cali", "Medellin");
+    myArrayDelete;
+
+    //Para elminiar usamos pop()-- myArrayDelete.pop();
+
+    let removedItem = myArrayDelete.pop();
+    myArrayDelete;
+    removedItem;
+
+    /*
+    unshift() y shift() funcionan exactamente igual de push() y pop(), respectivamente, excepto que funcionan al principio del arreglo, no al final.
+    */
+
+    //*** Realizar Pruebas
+
+   // https://developer.mozilla.org/es/docs/Learn_web_development/Core/Scripting/Arrays
+
+  </script>
+</html>

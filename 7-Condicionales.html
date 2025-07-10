@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Consola JavaScript</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        background-color: #111111;
+        color: #809089;
+        font-family: monospace;
+      }
+
+      body {
+        max-width: 700px;
+      }
+
+      p {
+        margin: 0;
+        width: 1%;
+        padding: 0 1%;
+        font-size: 16px;
+        line-height: 1.5;
+        float: left;
+      }
+
+      .input p {
+        margin-right: 1%;
+      }
+
+      .output p {
+        width: 100%;
+      }
+
+      .input input {
+        width: 96%;
+        float: left;
+        border: none;
+        font-size: 16px;
+        line-height: 1.5;
+        font-family: monospace;
+        padding: 0;
+        background: #0c323d;
+        color: #809089;
+      }
+
+      div {
+        clear: both;
+      }
+    </style>
+  </head>
+
+  <!--HTML <select> que nos permite realizar varias elecciones sobre el clima, y un parrafo simple.-->
+  <body>
+    <label for="clima">Seleccione el tipo de clima de hoy: </label>
+    <select id="clima">
+      <option value="">--Haga una elección--</option>
+      <option value="soleado">Soleado</option>
+      <option value="lluvioso">Lluvioso</option>
+      <option value="nevando">Nevando</option>
+      <option value="nublado">Nublado</option>
+    </select>
+
+    <p></p>
+
+    <label for="clima1">Seleccione el tipo de clima de hoy: </label>
+    <select id="clima1">
+      <option value="">--Seleccione Algo--</option>
+      <option value="soleado">Soleado</option>
+      <option value="lluvioso">Lluvioso</option>
+      <option value="nevando">Nevando</option>
+      <option value="nublado">Nublado</option>
+    </select>
+
+    <p></p>
+  </body>
+
+  <script>
+    /* 
+    Tomando decisiones en tu código — condicionales
+
+    ******Declaraciones if ... else****
+
+    Sintaxis Basica.
+
+        if (condición) {
+      código a ejecutar si la condición es verdadera
+    } else {
+      ejecuta este otro código si la condición es falsa
+    }
+
+    *****else if
+    Hay una forma de encadenar opciones / resultados adicionales extras a if...else — 
+    usando else if. Cada opción extra requiere un bloque adicional para poner en medio 
+    de bloque if() { ... } y else { ... }
+
+    Ejemplo:*
+    1-Estamos almacenando una referencia para ambos elementos <select> y <p> , y añadiendo 
+      un Event Listener. 
+    2-El elemento <select> así cuando su valor cambie se ejecuta la función establecerClima().
+    establecemos la variable eleccion con el valor obtenido del elemento <select>.
+      */
+
+    //*Ejemplo:
+    //1 Definimos la variables, la cuales apuntan a las estructuras del HTML selector y parrafo.
+    let seleccionar = document.querySelector("select");
+    let parrafo = document.querySelector("p");
+    //2 Agregamos un eventlistener para cuando seleccionar cambie "change" se ejecute la funcion establecer clima.
+    seleccionar.addEventListener("change", establecerClima);
+
+    function establecerClima() {
+      //3 Definimos la varible y la volvemos el valor seleccionado en el html "value"
+      let eleccion = seleccionar.value;
+      //todas las condicinales son probadas en los bloques else if() {...} ,
+      // a excepción del primero, el cual es probado en el primer bloque if() {...}.
+
+      if (eleccion === "soleado") {
+        parrafo.textContent = "El dia esta pleno pa piscina y pola";
+      } else if (eleccion === "lluvioso") {
+        parrafo.textContent = "Mejor estar en cama viendo peliculas";
+      } else if (eleccion === "nevando") {
+        parrafo.textContent = "Toca salir con la chaqueta de plumas";
+      } else if (eleccion === "nublado") {
+        parrafo.textContent = "Un tinto y a darle!";
+        //5 este bloque se ejecutará si nunguna de las condiciones es true
+      } else {
+        parrafo.textContent = "";
+      }
+    }
+
+    /* 
+Una nota en los operadores de comparación
+son usados para probar las condiciones dentro de nuestra declaración condicional.
+Nuestras opciones son:
+=== y !== — prueba si un valor es exactamente igual a otro, o sino es indentico a otro valor.
+< y > — prueba si un valor es menor o mayor que otro.
+<= y >= — prueba si un valor es menor e igual o mayor e igual que otro.
+
+Cualquier valor que no sea false, undefined, null, 0, NaN, o una cadena vacía string ('') 
+realmente retorna el valor true cuando es probada como una declaración condicional,
+
+Ejemplo:
+
+En el ejemplo anterior la variable queso contiene el valor 'Cheddar', y como su valor está 
+definido o no es false, undefined, null, 0, NaN y (' ') es considerado como true 
+lo cual hará mostrar el mensaje dentro del primer bloque de llaves.
+*/
+
+    let queso = "Chedar";
+
+    if (queso) {
+      console.log("Si hay queso");
+    } else {
+      console.log("No hay queso");
+    }
+
+    /**** Anidando if ... else
+
+Esta permitido poner una declaración if...else dentro de otra declaración if...else 
+
+Por ejemplo, podemos actualizar nuestra aplicación del clima para mostrar una serie de opciones dependiendo de cual sea la temperatura:
+*/
+
+    let seleccionar1 = document.querySelector("select");
+    let parrafo1 = document.querySelector("p");
+    //2 Agregamos un eventlistener para cuando seleccionar cambie "change" se ejecute la funcion establecer clima.
+    seleccionar1.addEventListener("change", establecerClima1);
+
+    function establecerClima1() {
+      let eleccion1 = seleccionar1.value;
+
+      if (eleccion1 === "soleado") {
+        if (temperatura < 86) {
+          parrafo.textContent =
+            "Esta a " + temperatura + "grados afuera, pleno pa pola y playa";
+        } else if (temperatura >= 86) {
+          parrafo.textContent =
+            "La temperatura es de " +
+            temperatura +
+            "Resto de bloqueador y tomar sol y pola";
+        }
+      }
+    }
+
+    /* 
+    
+**** Operadores lógicos: AND, OR y NOT
+Si quieres probar multiples condiciones sin escribir declaraciones if...elseanidados, 
+los operadores lógicos pueden ayudarte.
+
+&& — AND; le permite encadenar dos o más expresiones para que todas ellas se tengan que evaluar individualmente true para que expresión entera retorne true.
+|| — OR; le permite encadenar dos o más expresiones para que una o más de ellas se tengan que evaluar individualmente true para que expresión entera retorne true.
+
+*/
+    //Ejempo AND &&
+    let selecionar2 = document.querySelector("select");
+    let parrafo2 = document.querySelector("p");
+
+    seleccionar2.addEventListener("change", establecerClima2);
+
+    function establecerClima2() {
+      let eleccion2 = selecionar2.value;
+
+      //Ejemplo Operador AND
+      if (eleccion2 === "soleado" && temperatura < 86) {
+        parrafo2.textContent =
+          "Esta muy agradable pa una pola" + temperatura + "caliente..";
+      } else if (eleccion2 === "soleado" && temperatura >= 86) {
+        parrafo2.textContent =
+          "Esta soleado saque al pola y apliquese bloqueador en la jeta" +
+          temperatura +
+          "re caliente...";
+      }
+    }
+
+    //Ejempo Operador OR ||
+
+    if (carritoDeHelados || estadoDeLaCasa === "llamas") {
+      console.log("Salga de la casa rapido mk...");
+    } else {
+      console.log("Te puedes quedar dentro de la casa...");
+    }
+
+    //Ejempo Operador NOT !
+
+    if (!(carritoDeHelados || estadoDeLaCasa === "llamas")) {
+      console.log("Salga de la casa rapido mk...");
+    } else {
+      console.log("Te puedes quedar dentro de la casa...");
+    }
+  </script>
+</html>

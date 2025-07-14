@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Consola JavaScript</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        background-color: #d3d3d3;
+        color: #809089;
+        font-family: monospace;
+      }
+
+      body {
+        max-width: 700px;
+      }
+
+      p {
+        margin: 0;
+        width: 1%;
+        padding: 0 1%;
+        font-size: 16px;
+        line-height: 1.5;
+        float: left;
+      }
+
+      .input p {
+        margin-right: 1%;
+      }
+
+      .output p {
+        width: 100%;
+      }
+
+      .input input {
+        width: 96%;
+        float: left;
+        border: none;
+        font-size: 16px;
+        line-height: 1.5;
+        font-family: monospace;
+        padding: 0;
+        background: #eeeeee;
+        color: #809089;
+      }
+
+      div {
+        clear: both;
+      }
+    </style>
+  </head>
+
+  <body>
+    <canvas id="canvas" width="300" height="300">
+      Tu navegador no admite el elemento &lt;canvas&gt;.
+    </canvas>
+  </body>
+
+  <script>
+    /* 
+ *****Código de bucle*****
+ Utiles para completar rápidamente tareas repetitivas, desde múltiples cálculos básicos 
+ hasta casi cualquier otra situación en la que tenga que completar muchos elementos de 
+ trabajo similares.
+
+ ¿Por qué son útiles los bucles?
+ Los bucles se tratan de hacer lo mismo una y otra vez. A menudo, el código será 
+ ligeramente diferente cada vez que dure el bucle, o se ejecutará el mismo código pero 
+ con diferentes variables.
+
+Ejemplo de codigo de Bucles
+
+Supongamos que queremos dibujar 100 círculos aleatorios en un elemento <canvas> 
+  (pulse el botón Actualizar para ejecutar el ejemplo una y otra vez para ver diferentes 
+  conjuntos aleatorios):
+
+
+ */
+
+    const btn = document.querySelector("button");
+    const canvas = document.querySelector("canvas");
+    const ctx = canvas.getContext("2d");
+
+    document.addEventListener("DOMContentLoaded", () => {
+      canvas.width = document.documentElement.clientWidth;
+      canvas.height = document.documentElement.clientHeight;
+    });
+
+    function random(number) {
+      return Math.floor(Math.random() * number);
+    }
+
+    function draw() {
+      //Estamos usando un bucle para ejecutar 100 iteraciones de este código, cada una de las cuales dibuja un círculo en una posición aleatoria en la página. La cantidad de código necesaria sería la misma si estuviéramos dibujando 100 círculos, 1000 o 10.000. Solo un número tiene que cambiar.
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < 100; i++) {
+        ctx.beginPath();
+        ctx.fillStyle = "rgba(255,0,0,0.5)";
+        ctx.arc(
+          random(canvas.width),
+          random(canvas.height),
+          random(50),
+          0,
+          2 * Math.PI
+        );
+        ctx.fill();
+      }
+    }
+    btn.addEventListener("click", draw);
+
+    /* 
+*****Recorriendo una colección
+La mayoría de las veces, cuando usas un bucle, tendrás una colección de artículos y querrás hacer algo con cada artículo.
+
+
+Un tipo de colección es el Arreglo, que conocimos en el capítulo de Arreglos de este curso. 
+Pero también hay otras colecciones en JavaScript, como Set y Map.
+*/
+
+    //El bucle for...of
+
+   // const cats = ["Leopardo", "Serval", "Jaguar", "Tigre", "Caracal", "León"];
+
+    //En este ejemplo Dada la colección cats, consigue el primer artículo de la colección.
+    // Asignarlo a la variable cat y luego ejecutar el código entre las llaves {}.
+    // Obtén el siguiente elemento y repite (2) hasta que hayas llegado al final de la colección.
+    
+  //  for (const cat of cats) {
+   //   console.log(cat);
+   // }
+
+
+/* *****map() y filter()*******
+
+Bucles más especializados para colecciones.
+
+Puede usar map() para hacer algo con cada elemento de una colección y crear una nueva 
+colección que contenga los elementos modificados:
+
+
+*/
+
+/* function toUpper(string) {
+  return string.toUpperCase();
+}
+const cats = ["Leopardo", "Serval", "Jaguar", "Tigre", "Caracal", "León"];
+
+ */
+/* map() llama a la función una vez por cada elemento de la matriz, pasando el elemento. 
+A continuación, añade el valor devuelto de cada llamada de función a un nuevo arreglo y, 
+finalmente, devuelve el nuevo arreglo. */
+const upperCats = cats.map(toUpper);
+
+console.log(upperCats);
+// [ "LEOPARDO", "SERVAL", "JAGUAR", "TIGRE", "CARACAL", "LEÓN" ]
+
+/* Puede usar filter() para probar cada elemento de una colección y crear una nueva colección 
+que contenga solo elementos que coincidan */
+
+function lCat(cat) {
+  return cat.startsWith("L")
+}
+
+const filtered = cats.filter(lCat);
+
+/* Esto se parece mucho a map(), excepto que la función que pasamos devuelve un booleano: 
+si devuelve true, entonces el elemento se incluye en el nuevo arreglo. 
+Nuestra función prueba que el elemento comienza con la letra "L", por lo que el resultado 
+es una matriz que contiene solo gatos cuyos nombres comienzan con "L".*/
+
+console.log(filtered);
+// [ "Leopardo", "León" ]
+
+/* Tenga en cuenta que map() y filter() se usan a menudo con expresiones de funciones 
+ Usando expresiones de función podríamos reescribir el ejemplo anterior para que sea mucho más compacto
+*/
+
+const cats = ["Leopardo", "Serval", "Jaguar", "Tigre", "Caracal", "León"];
+
+const filter = cats.filter((cat) => cat.startsWith("L"));
+console.log(filter);
+
+  </script>
+</html>

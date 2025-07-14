@@ -55,7 +55,7 @@
 
   <!--HTML <select> que nos permite realizar varias elecciones sobre el clima, y un parrafo simple.-->
   <body>
-    <label for="clima">Seleccione el tipo de clima de hoy: </label>
+    <!--     <label for="clima">Seleccione el tipo de clima de hoy: </label>
     <select id="clima">
       <option value="">--Haga una elección--</option>
       <option value="soleado">Soleado</option>
@@ -64,8 +64,8 @@
       <option value="nublado">Nublado</option>
     </select>
 
-    <p></p>
-
+    <p></p> -->
+    <!-- 
     <label for="clima1">Seleccione el tipo de clima de hoy: </label>
     <select id="clima1">
       <option value="">--Seleccione Algo--</option>
@@ -75,38 +75,58 @@
       <option value="nublado">Nublado</option>
     </select>
 
-    <p></p>
+    <p></p> -->
+
+<!--     <label for="weather">Seleccione el tipo de clima hoy:</label>
+    <select id="weather">
+      <option value="">--Selecciona uno--</option>
+      <option value="sunny">Soleado</option>
+      <option value="rainy">Lluvioso</option>
+      <option value="snowing">Nevando</option>
+      <option value="overcast">Nublado</option>
+    </select>
+
+    <p></p> -->
+
+    <label for="theme">Seleccione el Tema:</label>
+    <select id="theme">
+
+      <option value="white">Blanco</option>
+      <option value="black"></option>
+
+    </select>
+    <h1>Este es mi sitio Web</h1>
   </body>
 
   <script>
-    /* 
-    Tomando decisiones en tu código — condicionales
+    /*
+        Tomando decisiones en tu código — condicionales
 
-    ******Declaraciones if ... else****
+        ******Declaraciones if ... else****
 
-    Sintaxis Basica.
+        Sintaxis Basica.
 
-        if (condición) {
-      código a ejecutar si la condición es verdadera
-    } else {
-      ejecuta este otro código si la condición es falsa
-    }
+            if (condición) {
+          código a ejecutar si la condición es verdadera
+        } else {
+          ejecuta este otro código si la condición es falsa
+        }
 
-    *****else if
-    Hay una forma de encadenar opciones / resultados adicionales extras a if...else — 
-    usando else if. Cada opción extra requiere un bloque adicional para poner en medio 
-    de bloque if() { ... } y else { ... }
+        *****else if
+        Hay una forma de encadenar opciones / resultados adicionales extras a if...else —
+        usando else if. Cada opción extra requiere un bloque adicional para poner en medio
+        de bloque if() { ... } y else { ... }
 
-    Ejemplo:*
-    1-Estamos almacenando una referencia para ambos elementos <select> y <p> , y añadiendo 
-      un Event Listener. 
-    2-El elemento <select> así cuando su valor cambie se ejecuta la función establecerClima().
-    establecemos la variable eleccion con el valor obtenido del elemento <select>.
-      */
+        Ejemplo:*
+        1-Estamos almacenando una referencia para ambos elementos <select> y <p> , y añadiendo
+          un Event Listener.
+        2-El elemento <select> así cuando su valor cambie se ejecuta la función establecerClima().
+        establecemos la variable eleccion con el valor obtenido del elemento <select>.
+          */
 
     //*Ejemplo:
     //1 Definimos la variables, la cuales apuntan a las estructuras del HTML selector y parrafo.
-    let seleccionar = document.querySelector("select");
+    /*     let seleccionar = document.querySelector("select");
     let parrafo = document.querySelector("p");
     //2 Agregamos un eventlistener para cuando seleccionar cambie "change" se ejecute la funcion establecer clima.
     seleccionar.addEventListener("change", establecerClima);
@@ -129,42 +149,42 @@
       } else {
         parrafo.textContent = "";
       }
-    }
+    } */
 
-    /* 
-Una nota en los operadores de comparación
-son usados para probar las condiciones dentro de nuestra declaración condicional.
-Nuestras opciones son:
-=== y !== — prueba si un valor es exactamente igual a otro, o sino es indentico a otro valor.
-< y > — prueba si un valor es menor o mayor que otro.
-<= y >= — prueba si un valor es menor e igual o mayor e igual que otro.
+    /*
+    Una nota en los operadores de comparación
+    son usados para probar las condiciones dentro de nuestra declaración condicional.
+    Nuestras opciones son:
+    === y !== — prueba si un valor es exactamente igual a otro, o sino es indentico a otro valor.
+    < y > — prueba si un valor es menor o mayor que otro.
+    <= y >= — prueba si un valor es menor e igual o mayor e igual que otro.
 
-Cualquier valor que no sea false, undefined, null, 0, NaN, o una cadena vacía string ('') 
-realmente retorna el valor true cuando es probada como una declaración condicional,
+    Cualquier valor que no sea false, undefined, null, 0, NaN, o una cadena vacía string ('')
+    realmente retorna el valor true cuando es probada como una declaración condicional,
 
-Ejemplo:
+    Ejemplo:
 
-En el ejemplo anterior la variable queso contiene el valor 'Cheddar', y como su valor está 
-definido o no es false, undefined, null, 0, NaN y (' ') es considerado como true 
-lo cual hará mostrar el mensaje dentro del primer bloque de llaves.
-*/
+    En el ejemplo anterior la variable queso contiene el valor 'Cheddar', y como su valor está
+    definido o no es false, undefined, null, 0, NaN y (' ') es considerado como true
+    lo cual hará mostrar el mensaje dentro del primer bloque de llaves.
+    */
 
-    let queso = "Chedar";
+ /*    let queso = "Chedar";
 
     if (queso) {
       console.log("Si hay queso");
     } else {
       console.log("No hay queso");
-    }
+    } */
 
     /**** Anidando if ... else
 
-Esta permitido poner una declaración if...else dentro de otra declaración if...else 
+    Esta permitido poner una declaración if...else dentro de otra declaración if...else
 
-Por ejemplo, podemos actualizar nuestra aplicación del clima para mostrar una serie de opciones dependiendo de cual sea la temperatura:
-*/
+    Por ejemplo, podemos actualizar nuestra aplicación del clima para mostrar una serie de opciones dependiendo de cual sea la temperatura:
+    */
 
-    let seleccionar1 = document.querySelector("select");
+    /*     let seleccionar1 = document.querySelector("select");
     let parrafo1 = document.querySelector("p");
     //2 Agregamos un eventlistener para cuando seleccionar cambie "change" se ejecute la funcion establecer clima.
     seleccionar1.addEventListener("change", establecerClima1);
@@ -183,20 +203,20 @@ Por ejemplo, podemos actualizar nuestra aplicación del clima para mostrar una s
             "Resto de bloqueador y tomar sol y pola";
         }
       }
-    }
+    } */
 
-    /* 
-    
-**** Operadores lógicos: AND, OR y NOT
-Si quieres probar multiples condiciones sin escribir declaraciones if...elseanidados, 
-los operadores lógicos pueden ayudarte.
+    /*
 
-&& — AND; le permite encadenar dos o más expresiones para que todas ellas se tengan que evaluar individualmente true para que expresión entera retorne true.
-|| — OR; le permite encadenar dos o más expresiones para que una o más de ellas se tengan que evaluar individualmente true para que expresión entera retorne true.
+    **** Operadores lógicos: AND, OR y NOT
+    Si quieres probar multiples condiciones sin escribir declaraciones if...elseanidados,
+    los operadores lógicos pueden ayudarte.
 
-*/
+    && — AND; le permite encadenar dos o más expresiones para que todas ellas se tengan que evaluar individualmente true para que expresión entera retorne true.
+    || — OR; le permite encadenar dos o más expresiones para que una o más de ellas se tengan que evaluar individualmente true para que expresión entera retorne true.
+
+    */
     //Ejempo AND &&
-    let selecionar2 = document.querySelector("select");
+/*     let selecionar2 = document.querySelector("select");
     let parrafo2 = document.querySelector("p");
 
     seleccionar2.addEventListener("change", establecerClima2);
@@ -214,22 +234,153 @@ los operadores lógicos pueden ayudarte.
           temperatura +
           "re caliente...";
       }
-    }
+    } */
 
     //Ejempo Operador OR ||
 
-    if (carritoDeHelados || estadoDeLaCasa === "llamas") {
-      console.log("Salga de la casa rapido mk...");
-    } else {
-      console.log("Te puedes quedar dentro de la casa...");
-    }
+    // if (carritoDeHelados || estadoDeLaCasa === "llamas") {
+    //   console.log("Salga de la casa rapido mk...");
+    // } else {
+    //   console.log("Te puedes quedar dentro de la casa...");
+    // }
 
     //Ejempo Operador NOT !
+    //En el anterior ejemplo, si las declaraciones del operador OR retornan un valor true, el operador NOT negará toda la expresión dentro de los paréntesis, por lo tanto retornará un valor false.
 
-    if (!(carritoDeHelados || estadoDeLaCasa === "llamas")) {
-      console.log("Salga de la casa rapido mk...");
-    } else {
-      console.log("Te puedes quedar dentro de la casa...");
+    // if (!(carritoDeHelados || estadoDeLaCasa === "llamas")) {
+    //   console.log("Salga de la casa rapido mk...");
+    // } else {
+    //   console.log("Te puedes quedar dentro de la casa...");
+    // }
+
+    /*
+    Puedes combinar los operadores que quieras dentro de las sentencias,
+    en cualquier estructura.
+
+    El siguiente ejemplo ejecuta el código dentro del condicional solo si ambas sentencias OR
+    devuelven verdadero, lo que significa que la instrucción general AND devolverá verdadero:
+    */
+
+    // if (
+    //   (x === 5 || y > 3 || z <= 10) &&
+    //   (logueado || nombreUsuario === "Steve")
+    // ) {
+    // }
+
+    /*****Declaraciones con switch
+       Hay variedad de casos donde necesitarás realizar varias elecciones, y cada una requiere
+       una cantidad razonable de código para ser ejecutado y/o sus condicionales son complejas
+       (i.e. operadores lógicos múltiples).
+
+    Para estos casos los switch statements son de gran ayuda — toman una sola expresión / valor como una entrada,
+    y luego pasan a través de una serie de opciones hasta que encuentran una que coincida
+    con ese valor, ejecutando el código correspondiente que va junto con ella. Ejmplo:
+
+    switch (expresion) {
+      case choice1:
+        ejecuta este código
+        break;
+
+      case choice2:
+        ejecuta este código
+        break;
+
+      // Se pueden incluir todos los casos que quieras
+
+      default:
+        por si acaso, corre este código
     }
+
+    */
+    /* 
+    let select = document.querySelector("select");
+    let para = document.querySelector("p");
+
+    select.addEventListener("change", setWeather);
+
+    function setWeather() {
+      let choice = select.value;
+
+      switch (choice) {
+        case "sunny":
+          para.textContent =
+            "Afuera hoy hace sol y es agradable. ¡Usa pantalones cortos! Ve a la playa o al parque y tómate un helado.";
+
+          break;
+
+        case "rainy":
+          para.textContent =
+            "Afuera llueve; llévate un impermeable y un paraguas y no te quedes fuera mucho tiempo.";
+
+          break;
+
+        case "snowing":
+          para.textContent =
+            "La nieve está cayendo, ¡está helada! Lo mejor es quedarse en casa con una taza de chocolate caliente o ir a construir un muñeco de nieve.";
+
+          break;
+
+        case "overcast":
+          para.textContent =
+            "No llueve, pero el cielo está gris y sombrío; Podría cambiar en cualquier momento, así que lleva un impermeable por si acaso.";
+
+          break;
+
+        default:
+          para.textContent = "";
+      }
+    }*/
+
+    /* 
+    ***Operador Ternario
+    Esto puede ser útil en algunas situaciones, y puede ocupar mucho menos código 
+    que un bloque if...else si simplemente tienes dos opciones que se eligen a través 
+    de una condición true/false
+    Estructura:
+    ( condición ) ? ejecuta este código : ejecuta este código en su lugar
+    
+    Ejemplo
+    Aquí tenemos una variable llamada isBirthday — si esta es true, le damos a nuestro 
+    invitado un mensaje de feliz cumpleaños; si no, le damos el saludo diario estándar.
+    
+    let greeting = isBirthday
+      ? "Feliz cumpleaños Sra. Smith. ¡Esperamos que tenga un gran día!"
+      : "Buenos días señora Smith.";
+
+Aquí tenemos un elemento <select> para elegir un tema (blanco o negro), más un simple 
+(black or white), plus a simple <h1> para mostrar el título de un sitio web. 
+  También tenemos una función llamada update(), que toma dos colores como parámetros 
+  (entradas). El color de fondo del sitio web se establece en el primer color proporcionado 
+  y el color del texto se establece en el segundo color proporcionado.
+Finalmente, también tenemos un detector de eventos onchange que sirve para 
+ejecutar una función que contiene un operador ternario.
+    
+    */
+
+          let select = document.querySelector("select");
+          let html = document.querySelector("html");
+
+          document.body.style.padding = "10px";
+
+          function update(bgColor, textColor) {
+              html.style.backgroundColor = bgColor;
+              html.style.color = textColor;
+
+            }
+
+            select.onchange =  function (){
+              select.value === "black"
+              ? update ("green", "white")
+              : update ("red", "black")
+            }
+
+          /* 
+          Aprendizaje activo: Un calendario simple
+            Realizar Practica 
+
+          https://developer.mozilla.org/es/docs/Learn_web_development/Core/Scripting/Conditionals
+          */
+
+
   </script>
 </html>

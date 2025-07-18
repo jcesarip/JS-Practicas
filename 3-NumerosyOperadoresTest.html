@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Practicas Unidad Operadores</title>
+
+
+  </head>
+
+  <body>
+       <h1>Practicas Unidad Operardores</h1>
+    <section class="preview"></section>
+
+    <script>
+
+
+/***** Test Matematicas 1*******/
+//Crear 4 valores númericos
+let numero1 = 2;
+let numero2 = 4;
+let numero3 = 2;
+let numero4 = 10;
+
+//Agrega las dos primeras variables juntas y guarda el resultado en otra variable.
+let result1 = numero1 + numero2;
+//6
+
+//Resta la cuarta variable de la tercera y almacena el resultado en otra variable.
+let result2 =  numero4 - numero3;
+//8
+
+//Multiplique los resultados de los dos últimos pasos juntos, almacenando el resultado 
+// en una variable llamada finalResult. El producto debe ser 48.
+let finalResult = result1 * result2;
+//48
+
+//Escribe un cálculo que verifique si finalResult es un número par. Almacene el resultado 
+// en una variable llamada evenOddResult
+
+let evenOddResult = (finalResult % 2===0)
+
+/* 
+Explicación:
+finalResult % 2 calcula el residuo de dividir finalResult entre 2.
+Si el residuo es 0, el número es par.
+Entonces evenOddResult será true si es par y false si es impar.
+*/
+
+
+/***** Test Matematicas 2******
+ ¿Qué queremos? Después de multiplicar los dos resultados y formatear el resultado con 2 
+ decimales, el resultado final debería ser 10,42.
+*/
+
+//Escribe un cálculo que multiplique result y result2 y asigne el resultado de nuevo a result.
+
+let numero5 = 2;
+let numero6 = 4;
+let numero7 = 2;
+let numero8 = 10;
+
+let result9 = numero5 + numero6;
+let result10 =  numero8 - numero7;
+
+//Escribe un cálculo que multiplique result y result2 y asigne el resultado de nuevo a result.
+result9 *= result10;
+//48
+
+//Escriba una línea de código que tome el resultado y lo formatee con 2 decimales, almacenando el resultado de esto en una variable llamada finalResult.
+let finalResult2 = result9.toFixed(2);
+
+//Verifique el tipo de dato de finalResult usando typeof. 
+//48.00 type of "String"
+
+//Escriba una línea de código que lo convierta en un tipo number, almacenando el resultado en una variable llamada finalNumber
+
+let finalNumber = parseFloat(result9.toFixed(2));
+//typeof 'number'
+
+
+
+/* 
+
+
+*/
+
+
+/***** Test Matematicas 3*******/
+
+
+    </script>
+  </body>
+</html>

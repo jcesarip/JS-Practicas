@@ -3,60 +3,30 @@
   <head>
     <meta charset="utf-8" />
     <title>Consola JavaScript</title>
-    <style>
-      * {
-        box-sizing: border-box;
-      }
-
-      html {
-        background-color: #d3d3d3;
-        color: #809089;
-        font-family: monospace;
-      }
-
-      body {
-        max-width: 700px;
-      }
-
-      p {
-        margin: 0;
-        width: 1%;
-        padding: 0 1%;
-        font-size: 16px;
-        line-height: 1.5;
-        float: left;
-      }
-
-      .input p {
-        margin-right: 1%;
-      }
-
-      .output p {
-        width: 100%;
-      }
-
-      .input input {
-        width: 96%;
-        float: left;
-        border: none;
-        font-size: 16px;
-        line-height: 1.5;
-        font-family: monospace;
-        padding: 0;
-        background: #eeeeee;
-        color: #809089;
-      }
-
-      div {
-        clear: both;
-      }
-    </style>
   </head>
 
   <body>
-    <canvas id="canvas" width="300" height="300">
+    <!--     <canvas id="canvas" width="300" height="300">
       Tu navegador no admite el elemento &lt;canvas&gt;.
-    </canvas>
+    </canvas> -->
+
+    <!--Calculo Cuadrados
+    <button id="calculate">Calcular</button>
+    <button id="clear">Borrar</button>
+    <pre id="results"></pre>-->
+    <!-- Ejemplo con BREAK
+    <label for="search">Buscar por nombre de contacto: </label>
+    <input id="search" type="text" />
+    <button>Buscar</button>
+
+    <p></p> -->
+
+    <!-- Ejemplo CONTINUE -->
+   <!--  <label for="number">Introducir número: </label>
+    <input id="number" type="number" />
+    <button>Generar cuadrados enteros</button>
+
+    <p>Resultado:</p> -->
   </body>
 
   <script>
@@ -79,7 +49,7 @@ Supongamos que queremos dibujar 100 círculos aleatorios en un elemento <canvas>
 
 
  */
-
+    /*
     const btn = document.querySelector("button");
     const canvas = document.querySelector("canvas");
     const ctx = canvas.getContext("2d");
@@ -110,7 +80,7 @@ Supongamos que queremos dibujar 100 círculos aleatorios en un elemento <canvas>
       }
     }
     btn.addEventListener("click", draw);
-
+*/
     /* 
 *****Recorriendo una colección
 La mayoría de las veces, cuando usas un bucle, tendrás una colección de artículos y querrás hacer algo con cada artículo.
@@ -122,18 +92,17 @@ Pero también hay otras colecciones en JavaScript, como Set y Map.
 
     //El bucle for...of
 
-   // const cats = ["Leopardo", "Serval", "Jaguar", "Tigre", "Caracal", "León"];
+    // const cats = ["Leopardo", "Serval", "Jaguar", "Tigre", "Caracal", "León"];
 
     //En este ejemplo Dada la colección cats, consigue el primer artículo de la colección.
     // Asignarlo a la variable cat y luego ejecutar el código entre las llaves {}.
     // Obtén el siguiente elemento y repite (2) hasta que hayas llegado al final de la colección.
-    
-  //  for (const cat of cats) {
-   //   console.log(cat);
-   // }
 
+    //  for (const cat of cats) {
+    //   console.log(cat);
+    // }
 
-/* *****map() y filter()*******
+    /* *****map() y filter()*******
 
 Bucles más especializados para colecciones.
 
@@ -143,45 +112,280 @@ colección que contenga los elementos modificados:
 
 */
 
-/* function toUpper(string) {
+    /* function toUpper(string) {
   return string.toUpperCase();
 }
 const cats = ["Leopardo", "Serval", "Jaguar", "Tigre", "Caracal", "León"];
 
  */
-/* map() llama a la función una vez por cada elemento de la matriz, pasando el elemento. 
+    /* map() llama a la función una vez por cada elemento de la matriz, pasando el elemento. 
 A continuación, añade el valor devuelto de cada llamada de función a un nuevo arreglo y, 
 finalmente, devuelve el nuevo arreglo. */
-const upperCats = cats.map(toUpper);
+    // const upperCats = cats.map(toUpper);
 
-console.log(upperCats);
-// [ "LEOPARDO", "SERVAL", "JAGUAR", "TIGRE", "CARACAL", "LEÓN" ]
+    // console.log(upperCats);
+    // [ "LEOPARDO", "SERVAL", "JAGUAR", "TIGRE", "CARACAL", "LEÓN" ]
 
-/* Puede usar filter() para probar cada elemento de una colección y crear una nueva colección 
+    /* Puede usar filter() para probar cada elemento de una colección y crear una nueva colección 
 que contenga solo elementos que coincidan */
 
-function lCat(cat) {
-  return cat.startsWith("L")
-}
+    /*     function lCat(cat) {
+      return cat.startsWith("L");
+    }
 
-const filtered = cats.filter(lCat);
-
-/* Esto se parece mucho a map(), excepto que la función que pasamos devuelve un booleano: 
+    const filtered = cats.filter(lCat);
+ */
+    /* Esto se parece mucho a map(), excepto que la función que pasamos devuelve un booleano: 
 si devuelve true, entonces el elemento se incluye en el nuevo arreglo. 
 Nuestra función prueba que el elemento comienza con la letra "L", por lo que el resultado 
 es una matriz que contiene solo gatos cuyos nombres comienzan con "L".*/
 
-console.log(filtered);
-// [ "Leopardo", "León" ]
+    // console.log(filtered);
+    // [ "Leopardo", "León" ]
 
-/* Tenga en cuenta que map() y filter() se usan a menudo con expresiones de funciones 
+    /* Tenga en cuenta que map() y filter() se usan a menudo con expresiones de funciones 
  Usando expresiones de función podríamos reescribir el ejemplo anterior para que sea mucho más compacto
 */
 
-const cats = ["Leopardo", "Serval", "Jaguar", "Tigre", "Caracal", "León"];
+    //    const cats = ["Leopardo", "Serval", "Jaguar", "Tigre", "Caracal", "León"];
 
-const filter = cats.filter((cat) => cat.startsWith("L"));
-console.log(filter);
+    // const filter = cats.filter((cat) => cat.startsWith("L"));
+    // console.log(filter);
+
+    /*****Bucle Estandar For
+ for (inicializador, condicion, expresion-final) {
+  //Codigo a ejecutar
+ }
+
+-Un inicializador: generalmente es una variable establecida en un número, que se incrementa para contar el número de veces que se ha ejecutado el bucle. También se denomina a veces variable de contador.
+-Una condición: define cuándo el bucle debe dejar de funcionar. Esta es generalmente una expresión que presenta un operador de comparación, una prueba para ver si se ha cumplido la condición de salida.
+-Una expresión-final: siempre se evalúa (o ejecuta) cada vez que el bucle ha pasado por una iteración completa. Por lo general, sirve para incrementar (o en algunos casos disminuir) la variable contadora, para acercarla al punto en que la condición ya no es true
+
+*/
+    /* 
+    Calculo de Cuadrados
+    Este código calcula los cuadrados de los números del 1 al 9 y escribe el resultado. 
+    El núcleo del código es el bucle for que realiza el cálculo. */
+
+    // const results = document.querySelector("#results");
+
+    // function calculate() {
+    /* 
+let i = 1: la variable del contador, i, comienza en 1. Tenga en cuenta que tenemos que usar 
+let para el contador, porque lo estamos reasignando cada vez que damos la vuelta al bucle.
+i < 10: sigue dando la vuelta al bucle mientras i sea menor que 10.
+i++: añade uno a i cada vez que recorras el bucle. */
+    // for (let i = 1; i < 10; i++) {
+    //   //Dentro del bucle, calculamos el cuadrado del valor actual de i, es decir: i * i. Creamos una cadena que expresa el cálculo que realizamos y el resultado
+    //   const newResult = `${i} x ${i} = ${i * i}`;
+
+    /* 
+Durante la primera ejecución, i = 1, por lo que añadiremos 1 x 1 = 1.
+Durante la segunda ejecución, i = 2, por lo que añadiremos 2 x 2 = 4.
+Y así sucesivamente...
+Cuando i sea igual a 10, dejaremos de ejecutar el bucle y pasaremos directamente al siguiente
+código debajo del bucle, imprimiendo el mensaje ¡Finalizado! en una nueva línea.
+
+*/
+
+    /*      results.textContent += `{newResult}\n`;
+      }
+      results.textContent += "\n¡Finalizado!";
+    }
+
+    const calculateBtn = document.querySelector("#calculate");
+    const clearBtn = document.querySelector("#clear");
+
+    calculateBtn.addEventListener("click", calculate);
+    clearBtn.addEventListener("click", () => (results.textContent = ""));
+ */
+    /*RECORRIENDO COLECCIONES CON CICLO FOR***
+ Puede usar un bucle for para iterar a través de una colección, en lugar de un bucle for...of.
+
+*/
+    //  const cats = ["Leopardo", "Serval", "Jaguar", "Tigre", "Caracal", "León"];
+
+    //comenzamos i en 0 y nos detenemos cuando i alcanza la longitud del arreglo. Luego, dentro del bucle, estamos usando i para acceder a cada elemento del arreglo a su vez.
+
+    /*     for (let i = 0; i < cats.length; i++) {
+      console.log(cats[i]);
+    }
+
+    const gatos = ["Arena", "Otto", "Alaska"];
+    let myFavoriteCats = "Mis gatos se llaman...";
+
+    for (let i = 0; i < gatos.length; i++) {
+      if (i === gatos.length - 1) {
+        myFavoriteCats += `${gatos[i]}.`;
+      } else {
+        myFavoriteCats += `${gatos[i]},`;
+      }
+    }
+    console.log(myFavoriteCats); */
+    // "Mis gatos se llaman Pete, Biggles y Jasmine."
+
+    /**** Saliendo de bucles con break
+Una instrucción break saldrá inmediatamente del bucle y hará que el navegador pase a cualquier código que lo siga.
+
+Ejemplo:
+Digamos que queríamos buscar a través de una serie de contactos y números de teléfono y devolver solo el número que queríamos encontrar.
+
+*/
+    //***Definiciones de variables:
+  /*   const contacts = [
+      "Chris:2232322",
+      "Sarah:3453456",
+      "Bill:7654322",
+      "Mary:9998769",
+      "Dianne:9384975",
+    ]; */
+    //Constantes vinculadas al HTML.
+/*     const para = document.querySelector("p");
+    const input = document.querySelector("input");
+    const btn = document.querySelector("button"); */
+
+    //Agregamos de detector de eventos
+  //  btn.addEventListener("click", () => {
+      //Const para vincular/almacenar campo input del HTML. método toLowerCase() en la cadena, de modo que las búsquedas no distingan entre mayúsculas y minúsculas.
+//const searchName = input.value.toLocaleLowerCase();
+      //Vaciado y en foco en para el campo de entrada
+  /*     input.value = "";
+      input.focus();
+      para.textContent = ""; */
+
+  //    for (const contact of contacts) {
+        //Primero dividimos el contacto actual en el carácter de dos puntos y almacenamos los dos valores resultantes en un arreglo llamado splitContact.
+    //    const splitContact = contact.split(":");
+
+        /* Instrucción condicional para probar si splitContact [0] (el nombre del contacto, 
+       nuevamente en minúsculas con toLowerCase()) es igual al searchName ingresado. */
+
+      //  if (splitContact[0].toLowerCase() === searchName) {
+          // introducimos una cadena en el párrafo para informar cuál es el número del contacto y usamos
+      //    para.textContent = `El numero de ${splitContact[0]} es ${splitContact[1]}`;
+          //break para finalizar el bucle.
+       //   break;
+       // }
+     // }
+     // if (para.textContent === "") {
+     //   para.textContent = "Contacto no encontrando";
+     // }
+   // });
+
+/****OMITIR ITERACIONES CON CONTINUE
+La instrucción continue funciona de manera similar a break, pero en lugar de salir del bucle 
+por completo, salta a la siguiente iteración del bucle.   
+
+*/
+
+/* const para = document.querySelector("p");
+const input  = document.querySelector("input");
+const btn = document.querySelector("button");
+
+
+btn.addEventListener("click", ()=>{
+  para.textContent = "Resultado:" ;
+  const num = input.value;
+  input.value = "";
+  input.focus(); */
+
+  //Al bucle for se le da un contador que comienza en 1.una condición de salida que dice que el bucle se detendrá cuando el contador se vuelva más grande que la entrada num, y un iterador que suma 1 al contador cada vez.una condición de salida que dice que el bucle se detendrá cuando el contador se vuelva más grande que la entrada num, y un iterador que suma 1 al contador cada vez.
+  //for (let i = 1; i<=num; i++) {
+    
+    //Encontramos la raíz cuadrada de cada número usando Math.sqrt(i)
+  //  let sqRoot = Math.sqrt(i);
+    //verificamos si la raíz cuadrada es un entero probando si es igual a sí misma cuando se ha redondeado al entero más cercano (esto es lo que Math.floor()
+
+  //  if (Math.floor(sqRoot) !== sqRoot) {
+//Si la raíz cuadrada y la raíz cuadrada redondeada hacia abajo no son iguales entre sí (!==), significa que la raíz cuadrada no es un número entero, por lo que no nos interesa. En tal caso, usamos la instrucción continue para saltar a la siguiente iteración de bucle
+ 
+ // continue;
+  //Si la raíz cuadrada es un número entero, omitimos por completo el bloque if, por lo que no se ejecuta la instrucción continue
+  //  }
+//    para.textContent += `${i} `;
+ // }
+//})
+
+/***** WHILE y DO WHILE 
+
+Estrucutra Basica del Bucle WHILE
+inicializador
+while(condición) {
+  // código a ejecutar
+
+  expresión-final
+}
+
+Esto funciona de una manera muy similar al bucle for, excepto que la variable inicializadora 
+se establece antes del bucle, y la expresión final se incluye dentro del bucle después del 
+código a ejecutar
+
+
+*/
+
+/* let cats = ["Arena", "Otto", "Alaska", "Oreo"];
+
+let myFavoriteCats = "Mis gatos se llaman " */
+
+//Inicializador
+/* let i = 0
+
+while (i<cats.length) {
+  if (i === cats.length -1) {
+    myFavoriteCats += `y ${cats[i]}.`;
+  } else {
+    myFavoriteCats += `y ${cats[i]}, `;
+  }
+  i++
+}
+console.log(myFavoriteCats); */
+// "Mis gatos se llaman Pete, Biggles y Jasmine."
+
+/****DO WHILE****
+ Estructura DO WHILE
+ inicializador
+do {
+  // código a ejecutar
+
+  expresión-final
+} while (condición)
+
+Principal diferencia entre do...while y while es que el código dentro de un bucle do...while 
+siempre se ejecuta al menos una vez.
+Esto se debe a que la condición viene después del código dentro del bucle.
+
+Así que siempre ejecutamos ese código, luego verificamos si necesitamos ejecutarlo de nuevo. 
+
+
+En los bucles while y for, la comprobación es lo primero, por lo que es posible que el código
+nunca se ejecute.
+
+*/
+
+  const cats = ["Pete", "Biggles", "Jasmine"];
+
+  let myFavoriteCats = "Mis gatos se llaman ";
+
+  let i = 0;
+
+  do {
+    if  (i === cats.length -1) {
+      myFavoriteCats +=  `y ${cats[i]}.`;
+    }else {
+      myFavoriteCats +=  `${cats[i]}, `;
+    }  i++
+    
+  }while (i<cats.length);
+  
+  console.log(myFavoriteCats)
+// "Mis gatos se llaman Pete, Biggles y Jasmine."
+
+
+/* 
+DE  
+https://developer.mozilla.org/es/docs/Learn_web_development/Core/Scripting/Loops
+
+ */
 
   </script>
 </html>

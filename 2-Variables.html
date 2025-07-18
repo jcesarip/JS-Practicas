@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Number guessing game</title>
+
+    <style>
+      html {
+        font-family: sans-serif;
+      }
+
+      body {
+        width: 50%;
+        max-width: 800px;
+        min-width: 480px;
+        margin: 0 auto;
+      }
+
+      .form input[type="number"] {
+        width: 200px;
+      }
+
+      .lastResult {
+        color: white;
+        padding: 3px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <button>Presióname</button>
+
+    <script>
+      /*****¿Qué es una variable?
+Una variable es un contenedor para un valor. Una cosa especial acerca de las variables 
+es que los valores que contienen pueden cambiar.
+
+las variables es que pueden contener casi cualquier cosa, no solo cadenas y números. 
+Las variables también pueden contener datos complejos e incluso funciones completas para 
+hacer cosas.
+
+*/
+
+      /**** Declarar una Variable.
+Escribimos la palabra clave var o let seguida del nombre con el que deseas llamar a tu 
+variable 
+*/
+
+      let myName1;
+      let myAge1;
+
+      /**** Iniciar una Variable.
+Una vez que hayas declarado una variable, la puedes iniciar con un valor. Para ello, 
+escribe el nombre de la variable, seguido de un signo igual (=)
+*/
+
+      myName1 = "Cesitar";
+      myAge1 = 40;
+
+      //Puedes declarar e iniciar una variable al mismo tiempo
+
+      let myCat1 = "Arena";
+
+      /**** Diferencia entre var y let 
+    Para empezar, si escribes un programa JavaScript de varias líneas que declara e inicia una variable, puedes declarar una variable con var después de iniciarla. 
+    Por ejemplo:
+
+      myName = "Chris";
+
+        function logName() {
+          console.log(myName);
+        }
+
+        logName();
+
+        var myName;
+
+
+La elevación (hoisting) ya no funciona con let. Si cambiamos var a let en el ejemplo anterior, 
+fallaría con un error. 
+
+En segundo lugar, cuando usas var, puedes declarar la misma variable tantas veces como desees, 
+pero con let no puedes.
+
+*/
+
+//Con VAR se puede declarar muchas veces la misma variable.
+//var myName1 = "Chris";
+//var myName1 = "Bob";
+
+//Let no permite declrar varias veces la misma variable.
+//let myName2 = "Chris";
+//let myName2 = "Bob";
+
+//Tendriamos que hacer esto para redeclarar la varible.
+//let myName3 = "Bob";
+//myName;
+
+//Nuevamente, esta es una sensata decisión del lenguaje. 
+// No hay razón para volver a declarar las variables — solo hace que las cosas sean más confusas.
+
+/*TIPOS DE VARIABLES.*/
+
+//Números
+let myAge = 17;
+
+//Cadenas de caracteres (Strings)
+let dolphinGoodbye = "Hasta luego y gracias por todos los peces";
+//Booleanos***
+let iAmAlive = true;
+//****Arreglos*****
+let myNameArray = ["Chris", "Bob", "Jim"];
+let myNumberArray = [10, 15, 40];
+myNameArray[0]; // debería devolver 'Chris'
+myNumberArray[2]; // debe devolver 40
+
+//*****Objetos*****
+let dog = { name: "Spot", breed: "Dalmatian" };
+dog.name;
+
+/****CONSTANTES*****
+ constante — un valor que, una vez declarado no se puede cambiar.
+
+*/
+
+/* 
+¡Pon a prueba tus habilidades!: Variables
+
+Variables 1
+
+Declares una variable llamada myName.
+Inicies myName con un valor adecuado, en una línea separada (puedes usar tu nombre real o algo más).
+Declares una variable llamada myAge la inicies con un valor, en la misma línea.
+*/
+
+let miNombre;
+miNombre = "Cesitar";
+
+let miEdad = 40
+
+/* 
+Variables 2
+
+Debes agregar una nueva línea para corregir el 
+valor almacenado en la variable myName
+*/
+
+let myName2 = "Diana";
+myName2 =  "Cesar";
+
+
+/* 
+Variables 3
+
+La tarea final por ahora — en este caso, se te proporciona un código existente, 
+que tiene dos errores presentes. El panel de resultados debería mostrar el nombre Chris 
+y una declaración sobre la edad que tendrá Chris dentro de 20 años.
+¿Cómo puedes solucionar el problema y corregir la salida?
+
+const myName4 = 'Default';
+myName4 = 'Chris';
+
+let myAge4 = '42';
+
+Para solucionar el caso la constante la cambiamos por una variable, para que se pueda
+ejecutar el cambio. Sobre  las constantes no se pueden cambiar valores.
+*/
+
+
+let myName4 = 'Default';
+myName4 = 'Chris';
+
+let myAge4 = '42';
+
+
+    </script>
+  </body>
+</html>
